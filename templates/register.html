@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.41/jquery.min.js">
+            function disablesubmit()
+            {
+                document.getElementById("submit").disabled = true;
+            }
+            function activateButton(element) 
+            {
+                if(element.checked) 
+                {
+                    document.getElementById("submit").disabled = false;
+                }
+                else  
+                {
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/reglog.css"/>
+        </head>
+        <body  style="background-size:cover;background-repeat: no-repeat;width:100%;height:100%">
+            <div class="hi">
+            <div class="topnav">
+                <table class="one">
+                <tr>
+                    <th><img src="/static/images/logo.jpg" style="height:70px;width:70px;"></th>
+                <th><p style="color:#000;font:weight bolder;letter-spacing:0.1em;font-size:35px;font-family:Monotype Corsiva;font-style:italic;">Cartoonify</p></th>
+                <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+                <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+                <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+                <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+                <th><a href="Home.html">HOME</a></th>
+                <th><a href="login.html">LOGIN</a></th>
+                <th><a href="home.html#about">ABOUT</a></th>
+                <th><a href="login.html">LOGOUT</a></th>
+                </tr> 
+                </table>                                            			
+            </div>
+                <div class="row">
+                    <div class="column">
+                        <p style="margin-top:-25px;font-size:90px;margin-left:5px;color:whitesmoke">WELCOME!</p>
+                        <p style="margin-left:20px;margin-top:-95px;font-size:25px;color:whitesmoke">Add magic to your photos</p>
+                        <p style="margin-left:20px;margin-top:-20px;font-size:18px;margin-right:10px;color:whitesmoke">Produce stunning photographs and captivating designs with    fun,easy-to-use editing-tools.</p>
+                        <br><br>
+                        <div class="textblock" style="background-color:whitesmoke;margin-left:10px;opacity:0.9;width:95%;position:relative;color:black;height:50px;line-height:50px;">
+                        <pre><p style="font-size:24px;vertical-align:center;"><b>   A GOOD PHOTO IS AN EVERLASTING MEMORY   </b></pre></p>
+                        </div>
+                        <hr align="center" style="width:90%;border-top: 1px solid #8c8b8b"></hr>
+                        <p style="margin-left:105px;margin-top:-5px;width:55%;background-color:black;font-size:18px;margin-right:10px;color:whitesmoke;text-align:center;"><b><i>CREATE - DESIGN - TRANSFORM</i></b></p>
+                        
+                        <br><br>
+                        <p style="margin-left:25px;text-align:justify;;margin-right:25px;font-size:40px;text-align:justify;color:white;line-height:34px;"><i>LETS GET STARTED!</i></p>
+                        <pre><p style="margin-left:25px;text-align:justify;margin-top:-25px;margin-right:25px;font-size:20px;text-align:justify;color:#00AEAD;line-height:30px;"><i>Give a refreshing style 
+Give an artistic touch
+What are you waiting for? 
+Creating your account with us!</i></pre></p>
+                    </div>
+                    <div class="register">
+                    <br>
+            <pre><p style="font-size:20px;margin:left 10px;font-family:monospace;font-weight: bold;">     Register</p></pre>
+            <form method="post" action="register.php">
+                <table width="50%" class="two">
+                    <tr><p style="font-size:12px;"><pre>        Name</p></tr></p>
+                    <tr><input type="text" placeholder="Enter your Name" name="uname" required /></tr>
+                    <tr><p style="font-size:12px;"><pre>        Email Address</p></tr>
+                    <tr><input type="email"  placeholder="Enter your email id" name="email" required /></tr>
+                    <tr><p style="font-size:12px;"><pre>        Password</p></tr>
+                    <tr><input type="password" placeholder="Enter your Password" id="name" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onchange='check();' required /></tr>
+                    <tr><p style="font-size:12px;"><pre>        Confirm Password</p></tr>
+                    <tr><input type="password" placeholder="Re-enter your Password" id="confirmpass" name="confirmpass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onchange='check();' required /></tr>
+                    <tr><p style="font-size:12px;"><pre>        Gender</p></tr>
+                    <tr><select id="gender" name="gender"><option value="Male">Male</option><option value="Female">Female</option><option value="Prefer not to say">Prefer not to say</option></select>
+                    <tr><p style="font-size:12px;"><pre>        Phone Number</p></tr>
+                    <div class="input-group">
+                    <tr><input type="tel" placeholder="Enter your Phone Number" name="phno" pattern="^\d{10}$" title="Must contain only digits" required /></tr>
+                    </div>
+                    <br><br>
+                    <pre><p class="reglogterms" style="font-size:13px;">        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)" required />  I agree to the terms and conditions of Tradz. <a href="Terms.html">Click Here</a> to view the terms and conditions.<br></p></pre>
+                    <input type="submit" class="button" name="signup" value="SIGN UP" id="submit"><br>
+                </table>
+                <br>
+            </div>
+                </form>
+        </body>
+</html>

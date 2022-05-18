@@ -1,0 +1,147 @@
+body
+{
+    margin: 0px;;
+}
+.topnav
+{
+    position:-webkit-sticky;
+    background-color:white;
+    width:100%;
+    overflow:hidden;
+    top:0;
+    -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+     will-change: transform;
+     border-bottom:40px solid black;
+     border-top:7px solid black;
+}
+.topnav a
+{
+      position: -webkit-sticky;
+      float: left;
+      text-align: center;
+      padding: 10px 15px;
+      font-size:15px;
+      font-family:sans-serif;
+    text-decoration: none;
+    background-color:white; 
+    font-weight:100px;
+    color:black;
+    display:block;
+   letter-spacing:0.05em;
+}
+.topnav a:hover
+{
+      background-color:black;
+      color:white;
+}
+.hi
+{
+    background-image:url("images/computer.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    width:100%;
+    height:300px;
+    flex: 8%;
+    background-attachment:fixed;
+    -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+     will-change: transform;
+}
+.login{
+    margin-top:80px;
+    margin-left:100px;
+    width:26%;
+    background:white;
+}
+.register{
+    box-shadow:5px 5px 5px 2px #fff;
+    margin-top:200px;
+    margin-left:150px;
+    width:80%;
+    background:white;
+}
+.log
+{
+    color:#000;
+    font-size:10;
+    font-family:monospace;
+}
+.reglog
+{
+    color:#000;
+    font-size:10;
+    font-family:monospace;
+}
+
+.button
+{
+    background-color:#000;
+    color: #fff;
+    padding: 8px 20px;
+    width:300px;
+    text-align:center;
+    margin-left:15px;
+    font-size: 13;
+    letter-spacing: 0.07em;
+    font-family:monospace;
+    cursor: pointer;
+    border-radius:1px;
+    border-color:#000;
+    text-decoration: none; 
+
+
+}
+table.two
+{
+    border-spacing:100px 50px;
+    padding:1px;
+}
+input[type=text]
+{
+    width:300px;
+    box-sizing: border-box;
+    border-radius:1px;
+    background-color:#Eee;
+    opacity:0.6;
+    font-family:monospace;
+    padding:9px 20px;
+    border:none;
+    outline:none;
+    font-size:14;
+    margin-left:15px;
+}
+input[type=email]
+{
+    width:300px;
+    box-sizing: border-box;
+    border-radius:1px;
+    background-color:#Eee;
+    opacity:0.6;
+    font-family:monospace;
+    padding:9px 20px;
+    border:none;
+    outline:none;
+    font-size:14;
+    margin-left:15px;
+}
+input[type=password]
+{
+    width:300px;
+    opacity:0.6;
+    box-sizing: border-box;
+    font-family:monospace;
+    background-color:#Eee;
+    border-radius:1px;
+    padding:9px 20px;
+    font-size:14;
+    border:none;
+    outline:none;
+    margin-left:15px;
+}
+table.three
+{
+    border-spacing:30px 15px;
+}
+
+  

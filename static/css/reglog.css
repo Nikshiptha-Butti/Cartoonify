@@ -1,0 +1,148 @@
+body
+{
+    margin: 0px;;
+}
+.topnav
+{
+    position:-webkit-sticky;
+    background-color:white;
+    width:100%;
+    overflow:hidden;
+    top:0;
+    -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+     will-change: transform;
+     border-bottom:40px solid black;
+     border-top:7px solid black;
+}
+.topnav a
+{
+      position: -webkit-sticky;
+      float: left;
+      text-align: center;
+      padding: 10px 15px;
+      font-size:15px;
+      font-family:sans-serif;
+    text-decoration: none;
+    background-color:white; 
+    font-weight:100px;
+    color:black;
+    display:block;
+   letter-spacing:0.05em;
+}
+.topnav a:hover
+{
+      background-color:black;
+      color:white;
+}
+.hi
+{
+    background-repeat: no-repeat;
+    background-size:cover;
+    width:100%;
+    height:300px;
+    flex: 8%;
+    background-attachment:fixed;
+    -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+     will-change: transform;
+}
+.register{
+    margin-top: 20px;
+    margin-left:10px;
+    width:50%;
+    background:white;
+}
+.reglog
+{
+    color:#000;
+    font-size:10;
+    font-family:monospace;
+}
+.button
+{
+    background-color:#000;
+    color: #fff;
+    padding: 10px 20px;
+    width:550px;
+    text-align:center;
+    margin-left:25px;
+    font-size: 13;
+    letter-spacing: 0.07em;
+    font-family:monospace;
+    cursor: pointer;
+    border-radius:1px;
+    border-color:#000;
+    text-decoration: none; 
+}
+table.two
+{
+    border-spacing:0px 15px;
+    border-collapse: separate;
+    padding:1px;
+}
+input[type=tel],[type=email],[type=password],[type=text]
+{
+    width:550px;
+    box-sizing: border-box;
+    border-radius:1px;
+    background-color:#Eee;
+    opacity:0.6;
+    font-family:monospace;
+    padding:9px 20px;
+    border:none;
+    outline:none;
+    font-size:14;
+    margin-left:25px;
+}
+intl-tel-input
+{
+    display:table-cell;
+}
+.intl-tel-input.selected-flag
+{
+    z-index:4;
+}
+.intl.tel.input.country-list
+{
+    z-index:5;
+}
+select
+{
+    width:550px;
+    box-sizing: border-box;
+    border-radius:1px;
+    background-color:#Eee;
+    opacity:0.6;
+    font-family:monospace;
+    padding:9px 20px;
+    border:none;
+    outline:none;
+    font-size:14;
+    margin-left:25px;
+line-height:3;
+}
+.input-group.intl-tel-input.form-control
+{
+    border-top-left-radius:4px;
+}
+table.three
+{
+    border-spacing:30px 15px;
+}
+.row
+{
+    display:flex;
+}  
+.column
+{
+    flex:50%;
+    background-image:url(/static/images/paint.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.line
+{
+    background-color: white;
+}
+  
