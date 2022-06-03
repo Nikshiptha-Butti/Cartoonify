@@ -15,25 +15,25 @@
             <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
             <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
 			<th><a href="Home.html">HOME</a></th>
-		    <th><a href="register.html">SIGN UP</a></th>
+		    <th><a href="/register">SIGN UP</a></th>
 			<th><a href="home.html#about">ABOUT</a></th>
-            <th><a href="login.html">LOGOUT</a></th>
+            <th><a href="/login">LOGOUT</a></th>
             </tr> 
             </table>                             			
 		</div>
        <div class="login"><br>
         <pre><p style="font-size:20px;margin:left 10px;font-family:monospace;font-weight: bold;">   Sign in</p></pre>
-            <form method="post" action="/register">
+            <form method="post" action="/loginvalidation">
                 <table width="30%" class="two">
                         <tr><p style="font-size:12px;"><pre>     Email Address</p></tr></p></tr>
                          <tr><input type="email" placeholder="Enter your email id " name="email" required /></tr><br>
                         <tr><p style="font-size:12px;"><pre>     Password</pre></p></tr>
-                        <tr><input type="password" placeholder="Enter your password "name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/></tr> 
+                        <tr><input type="password" placeholder="Enter your password " name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/></tr> 
                 </table>
                 <br>
                 <input type="submit" class="button" name="Ok" value="SIGN IN"><br><br>
                 <hr align="center" style="margin:left 20px;width:85%;border-top: 1px solid #8c8b8b"></hr>
-                <p style="font-size:14px;"><pre>              Don't have an account?<a href="register.html" style="font-size:15px;font-family:monospace;"> Sign up</a></pre></p></br>
+                <p style="font-size:14px;"><pre>              Don't have an account?<a href="/register" style="font-size:15px;font-family:monospace;"> Sign up</a></pre></p></br>
             </form>
     </div>    
     </body>
