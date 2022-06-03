@@ -145,4 +145,16 @@ table.three
 {
     background-color: white;
 }
-  
+.wrapper
+{
+    height:100px;
+    margin-left:350px;
+    width:100px;
+    position:relative;
+    border:5px solid black;
+    border-radius:50%;
+    background:url(/static/images/profile.jpg);
+    background-size:100% 100%;
+    padding:0;
+    
+}
