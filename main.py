@@ -1,3 +1,4 @@
+from email.policy import default
 from pydoc import render_doc
 from flask import Flask, render_template,redirect, request,url_for,request,flash
 from flask_mysqldb import MySQL
@@ -48,13 +49,13 @@ def new_user():
     con_passsword=request.form.get('confirmpass')
     gender=request.form.get('gender')
     phno=request.form.get('phno')
-    cur.execute("""SELECT * from 'user' where 'email' like '()' and 'password' like '()'""",format(email,password))
+    cur.execute("SELECT * from user where email=%s and password =%s",(email,password))
     count=cur.fetchall()
     if len(count)>0:
-        flash('User already exists.Regsiter again!')
+        flash('User already exists.Register again!')
         return render_template("register.html")
     else:
-        cur.execute("INSERT INTO users values(DEFAULT,name,email,password,gender,phno,profpic)")
+        cur.execute("INSERT INTO users values(default,%s,%s,%s,%s,%d,%s)",(default,name,email,password,gender,phno,profpic))
         con.commit()
         cur.close()
         flash('User added successfully')
