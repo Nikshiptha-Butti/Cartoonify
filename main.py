@@ -1,4 +1,3 @@
-from email.policy import default
 from pydoc import render_doc
 from flask import Flask, render_template,redirect, request,url_for,request,flash
 from flask_mysqldb import MySQL
@@ -55,7 +54,7 @@ def new_user():
         flash('User already exists.Register again!')
         return render_template("register.html")
     else:
-        cur.execute("INSERT INTO users values(default,%s,%s,%s,%s,%d,%s)",(default,name,email,password,gender,phno,profpic))
+        cur.execute("INSERT INTO user(id,name,password,gender,phno,profpic) values(%s,%s,%s,%s,%d,%s)",(name,email,password,gender,phno,profpic))
         con.commit()
         cur.close()
         flash('User added successfully')
