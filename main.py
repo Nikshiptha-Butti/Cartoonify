@@ -26,8 +26,6 @@ def register():
 def home():
     return render_template('home.html')
 """
-
-
 @app.route('/loginvalidation',methods=['POST','GET'])
 def loginvalidation():
     email=request.form.get('email')
