@@ -14,20 +14,21 @@ app.config['MYSQL_PASSWORD']=''
 app.config['MYSQL_DB']=''
 mysql=MySQL(app)*/
 """
-@app.route('/login')
+@app.route('/')
 def login(methods=['POST']):   
     return render_template("login.html")
 
 @app.route('/register')
 def register():
     return render_template("register.html")
+"""
 @app.route('/')
 def home():
     return render_template('home.html')
+"""
 
 
-
-@app.route('/loginvalidation',method=['POST'])
+@app.route('/loginvalidation',methods=['POST','GET'])
 def loginvalidation():
     email=request.form.get('email')
     password=request.form.get('password')
@@ -40,7 +41,7 @@ def loginvalidation():
 
 
 
-@app.route('/newuser',method=['POST'])
+@app.route('/newuser',methods=['POST'])
 def new_user():
     profpic=request.form.get('profpic')
     name=request.form.get('uname')
