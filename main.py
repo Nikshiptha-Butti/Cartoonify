@@ -31,13 +31,14 @@ def loginvalidation():
     con=mysql.connector.connect(host='localhost',user='root',password='')
     cur=con.cursor()
     cur.execute("use cartoonify;")
-    res="select * from users where email=email and password=password;"
+    res="select * from users where email='{}' and password='{}'".format(email,password)
     cur.execute(res)
     count=cur.fetchall()
     cur.close()
     if len(count)>0:
         return render_template("edit.html")
     else:
+        flash("No such user found.Register Now")
         return render_template("register.html")
     
 
@@ -55,7 +56,7 @@ def new_user():
     con=mysql.connector.connect(host='localhost',user='root',password='')
     cur=con.cursor()
     cur.execute("use cartoonify;")
-    res="select * from users where email=email and password=password;"
+    res="select * from users where email='{}' and password='{}'".format(email,password)
     cur.execute(res)
     count=cur.fetchall()
     if len(count)>0:
