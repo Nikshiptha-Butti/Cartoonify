@@ -148,13 +148,51 @@ table.three
 .wrapper
 {
     height:100px;
-    margin-left:350px;
+    margin-left:380px;
     width:100px;
     position:relative;
     border:5px solid black;
     border-radius:50%;
-    background:url(/static/images/profile.jpg);
-    background-size:100% 100%;
+   background:url(/static/images/profile.jpg);
+    background-size:100% 110%;
     padding:0;
-    
+    overflow: hidden;
+}
+.myfile
+{
+    position:absolute;
+    bottom:0;
+    top:40px;
+    outline:none;
+    color:transparent;
+    width:100%;
+    box-sizing:border-box;
+    padding:72px 5px 9px;
+    cursor:pointer;
+    transition:0.5s;
+    background:rbga(0,0,0,0.5);
+    opacity:0;
+
+}
+.myfile::-webkit-file-upload-button
+{
+    visibility:hidden;
+}
+.myfile:hover
+{
+    opacity:1;
+}
+#uploadBtn
+{
+    height:40px;
+    width:100%;
+    bottom:3;
+    position: absolute;
+    left:19%;
+    top:73%;
+    transform:transateX(-50%);
+    text-align:left;
+    /*background:rgb(0,0,0,0.6);*/
+    color:wheat;
+    line-height:20px;
 }

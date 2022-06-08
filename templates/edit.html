@@ -1,5 +1,96 @@
 <html>
-    <body>
-        <p>Cartoonify edit</p>
-    </body>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/edit.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family="/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#Neural_style").click(function(){
+                if($(this).is(":checked")){
+                    $("#neuralselect").show();
+                }else {
+                    $("#neuralselect").hide();
+                }
+
+                });
+            });
+    </script>
+    </head>
+	<body background="" style="background-size:cover;background-repeat: no-repeat;width:100%;height:100%">
+		<div class="hi">
+		<div class="topnav">
+            <table class="one">
+            <tr>
+            <th><img src="/static/images/logo.jpg" style="height:70px;width:70px;"></th>
+            <th><p style="color:#000;font:weight bolder;letter-spacing:0.1em;font-size:35px;font-family:Monotype Corsiva;font-style:italic;">Cartoonify</p></th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+			<th><a href="Home.html">HOME</a></th>
+		    <th><a href="/register">SIGN UP</a></th>
+			<th><a href="home.html#about">ABOUT</a></th>
+            <th><a href="/">LOGOUT</a></th>
+            </tr> 
+            </table>                             			
+		</div>
+        <div class="row">
+            <div class="column">
+                <form method="post" action="/edit">
+                    <input type="file" class="uploadphoto" id="file" name="photo" accept="image/*">
+                    <label for="file"><pre>       </pre><i class="material-icons">add_photo_alternate</i>Choose a photo</label>
+                <p style="margin-top:20px;font-size:40px;margin-left:10px;color:black solid;font-style:bold;">PICKER</p>
+                <div class="input-box-wrapper">
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Grey Scale" id="grey_scale" name="grey_scale">
+                        <label for="Grey Scale"><pre>   Grey Scale</pre></label><br>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Mean Blur" id="mean_blur" name="mean_scale">
+                        <label for="Grey Scale"><pre>  Mean Blur</pre></label><br>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Median Blur" id="median_blur" name="median_blur">
+                        <label for="Grey Scale"><pre>  Median Blur</pre></label><br>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Guassian Blur" id="guassian_blur" name="mean_blur">
+                        <label for="Grey Scale"><pre>  Guassian Blur</pre></label><br>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Reduce Color Palatte" id="color_palatte" name="color_palatte">
+                        <label for="Grey Scale"><pre>  Reduce Color Palatte</pre></label><br>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Neural style" id="Neural_style" name="Neural_style">
+                        <label for="Grey Scale"><pre>  Neural_style</pre></label><br>
+                    </div>
+                </div>
+                <div class="custom select" id="neuralselect" style="display:none;">
+                    <select class="neuraldrop">
+                        <option value="img1">img1</option>
+                        <option value="img2">img2</option>
+                        <option value="img3">img3</option>
+                        <option value="img4">img4</option>
+                        <option value="img5">img5</option>
+                        <option value="other">Choose from PC</option>
+                    </select>
+                </div>
+                <input type="submit" value="Apply Effects" id="apply"></button>
+            </form>
+            </div>
+            <div class="register">
+            
+            <div class="photoview">
+            {%for i in range(0,cnt)%}
+                <li>{{photos[i]}}</li>
+                <p>imges</p>
+            {%endfor%}
+            </div>
+        
+
+    </div>
+</body>
 </html>
