@@ -38,8 +38,8 @@
 		</div>
         <div class="row">
             <div class="column">
-                <form method="post" action="/edit">
-                    <input type="file" class="uploadphoto" id="file" name="photo" accept="image/*">
+                <form enctype="multipart/form-data" method="post" action="/edit" >
+                    <input type="file" class="uploadphoto" name="pic">
                     <label for="file"><pre>       </pre><i class="material-icons">add_photo_alternate</i>Choose a photo</label>
                 <p style="margin-top:20px;font-size:40px;margin-left:10px;color:black solid;font-style:bold;">PICKER</p>
                 <div class="input-box-wrapper">
@@ -78,19 +78,13 @@
                         <option value="other">Choose from PC</option>
                     </select>
                 </div>
-                <input type="submit" value="Apply Effects" id="apply"></button>
+                <input type="submit" value="Apply Effects" id="apply">
             </form>
             </div>
             <div class="register">
-            
             <div class="photoview">
-            {%for i in range(0,cnt)%}
-                <li>{{photos[i]}}</li>
-                <p>imges</p>
-            {%endfor%}
+           
             </div>
-        
-
     </div>
 </body>
 </html>

@@ -154,10 +154,10 @@ table.three
     line-height:3;
     background:#89CFF0;
 }
-input[type="file"]
+/*input[type="file"]
 {
     display:none;
-}
+}*/
 label[for=file]
 {
     position:relative;
