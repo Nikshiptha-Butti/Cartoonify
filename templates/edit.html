@@ -48,7 +48,7 @@
                         <label for="Grey Scale"><pre>   Grey Scale</pre></label><br>
                     </div>
                     <div class="box">
-                        <input type="checkbox" class="checkbox" value="Mean Blur" id="mean_blur" name="mean_scale">
+                        <input type="checkbox" class="checkbox" value="Mean Blur" id="mean_blur" name="mean_blur">
                         <label for="Grey Scale"><pre>  Mean Blur</pre></label><br>
                     </div>
                     <div class="box">
@@ -56,8 +56,12 @@
                         <label for="Grey Scale"><pre>  Median Blur</pre></label><br>
                     </div>
                     <div class="box">
-                        <input type="checkbox" class="checkbox" value="Guassian Blur" id="guassian_blur" name="mean_blur">
+                        <input type="checkbox" class="checkbox" value="Guassian Blur" id="guassian_blur" name="guassian_blur">
                         <label for="Grey Scale"><pre>  Guassian Blur</pre></label><br>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" class="checkbox" value="Bilateral Filter" id="b_filter" name="b_filter">
+                        <label for="Grey Scale"><pre>  Bilateral Filter</pre></label><br>
                     </div>
                     <div class="box">
                         <input type="checkbox" class="checkbox" value="Reduce Color Palatte" id="color_palatte" name="color_palatte">
@@ -70,7 +74,7 @@
                 </div>
                 <div class="custom select" id="neuralselect" style="display:none;">
                     <select class="neuraldrop">
-                        <option value="img1">img1</option>
+                        <option value="/static/style/img1.jpg">img1</option>
                         <option value="img2">img2</option>
                         <option value="img3">img3</option>
                         <option value="img4">img4</option>
@@ -83,7 +87,12 @@
             </div>
             <div class="register">
             <div class="photoview">
-           
+                <img src="/static/uploads/newgray.jpeg" style="width:250px;height:250px;">
+                <img src="/static/uploads/blurnew.jpeg" style="width:250px;height:250px;">
+                <img src="/static/uploads/guassian.jpeg" style="width:250px;height:250px;">
+                <img src="/static/uploads/medianblur.jpeg" style="width:250px;height:250px;">
+                <img src="/static/uploads/bfilter.jpeg" style="width:250px;height:250px;">
+                <img src="/static/uploads/colorpalatte.jpeg" style="width:250px;height:250px;">
             </div>
     </div>
 </body>

@@ -1,14 +1,21 @@
 from pydoc import render_doc
-from flask import Flask, render_template,redirect, request,url_for,flash
+from flask import Flask, render_template,redirect, request,url_for,flash,session
 from flask_mysqldb import MySQL
 import mysql.connector
 import notifypy
 import cv2
+from PIL import Image,ImageFilter
+import numpy as np
 notification=notifypy.Notify()
 import yaml
 import os
 from werkzeug.utils import secure_filename
+from sklearn.cluster import KMeans
+from sklearn.utils import shuffle
 app=Flask(__name__)
+app.secret_key="NHN"
+UPLOAD_FOLDER='static/uploads/'
+app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
 #Configure the database
 @app.route('/')
 def login(methods=['POST']):   
@@ -40,7 +47,7 @@ def loginvalidation():
         notification.message="Login successful!"
         notification.icon="./static/images/logo.jpg"
         notification.send()
-        return render_template("edit.html")
+        return render_template('edit.html')
     else:
         notification.title="Cartoonify"
         notification.message="No such user found. Register Now!"
@@ -82,19 +89,69 @@ def new_user():
         return render_template("login.html")
 
 @app.route('/edit',methods=['POST'])
-def edit_photos():
-    print(email)
+def edit():
     count=0
+    global email
+    flname=""
     grey_scale=request.form.get('grey_scale')
     mean_blur=request.form.get('mean_blur')
     median_blur=request.form.get('median_blur')
-    guassian_blur=request.form.get('guassian _blur')
+    guassian_blur=request.form.get('guassian_blur')
+    bilateral_filter=request.form.get('b_filter')
+    color_palatte=request.form.get('color_palatte')
     neural_style=request.form.get('neural_style')
-    filename=request.files.getlist('pic')
+    img=request.files.getlist('pic')
+    for f in img:
+        flname=secure_filename(f.filename)
+        fos=os.path.join(app.config['UPLOAD_FOLDER'],flname)
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'],flname))
+        flname=UPLOAD_FOLDER+flname
+    print(flname)
     con=mysql.connector.connect(host='localhost',user='root',password='')
     cur=con.cursor()
     cur.execute("use cartoonify;")
-
+    if(grey_scale is not None):
+        imgread=cv2.imread(flname)
+        gray=cv2.cvtColor(imgread,cv2.COLOR_BGR2GRAY)
+        graynew=Image.fromarray(gray)
+        graynew.save('static/uploads/newgray.jpeg')
+        count=count+1
+    if(mean_blur is not None):
+        imgread=Image.open(flname)
+        blurimg=imgread.filter(ImageFilter.BLUR)
+        blurimg.save('static/uploads/blurnew.jpeg')
+        count=count+1
+    if(guassian_blur is not None):
+        imgread=Image.open(flname)
+        guassianimg=imgread.filter(ImageFilter.GaussianBlur(5))
+        guassianimg.save('static/uploads/guassian.jpeg')
+        count=count+1
+    if(median_blur is not None):
+        read=cv2.imread(flname)
+        medianblur=cv2.medianBlur(read,5)
+        medianblur=Image.fromarray(medianblur)
+        medianblur.save('static/uploads/medianblur.jpeg')
+        count=count+1
+    if(bilateral_filter is not None):
+        read=cv2.imread(flname)
+        b_filter=cv2.bilateralFilter(read,d=7,sigmaColor=200,sigmaSpace=200)
+        b_filter=Image.fromarray(b_filter)
+        b_filter.save('static/uploads/bfilter.jpeg')
+        count=count+1
+    if(color_palatte is not None):
+        read=cv2.imread(flname)
+        # Defining input data for clustering
+        data = np.float32(read).reshape((-1, 3))
+        # Defining criteria
+        criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 20, 1.0)
+        # Applying cv2.kmeans function
+        ret, label, center = cv2.kmeans(data,3, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
+        center = np.uint8(center)
+        result = center[label.flatten()]
+        result = result.reshape(read.shape)
+        img=Image.fromarray(result)
+        img.save('static/uploads/colorpalatte.jpeg')
+        count=count+1
     return render_template("edit.html")
     
 if __name__=='__main__':
