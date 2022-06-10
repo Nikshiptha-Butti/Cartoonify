@@ -14,13 +14,8 @@
                     $("#neuralselect").hide();
                 }
 
+                });
             });
-        });
-        function greychecker(that){
-            if(that.checked){
-                document.write('')
-            }
-        }
     </script>
     </head>
 	<body background="" style="background-size:cover;background-repeat: no-repeat;width:100%;height:100%">
@@ -43,11 +38,10 @@
 		</div>
         <div class="row">
             <div class="column">
-                <form enctype="multipart/form-data" method="post" action="/edit" >
-                    <input type="file" class="uploadphoto" name="pic">
-                    <label for="file"><pre>       </pre><i class="material-icons">add_photo_alternate</i>Choose a photo</label>
-                    
-                    
+                <form enctype="multipart/form-data" method="post" action="/apply" >
+                    <input type="submit" class="button" name="button" id="button" value="Capture a photo"></input>   
+                </form>
+                <form enctype="multipart/form-data" method="post" action="/video" >                   
                 <p style="margin-top:20px;font-size:40px;margin-left:10px;color:black solid;font-style:bold;">PICKER</p>
                 <div class="input-box-wrapper">
                     <div class="box">

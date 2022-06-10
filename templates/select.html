@@ -1,0 +1,33 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/login.css"/>
+    </head>
+	<body background="/static/images/select.jpg" style="background-size:cover;background-repeat:no-repeat;width:100%;height:100%">
+		<div class="hi">
+		<div class="topnav">
+            <table class="one">
+            <tr>
+            <th><img src="/static/images/logo.jpg" style="height:70px;width:70px;"></th>
+            <th><p style="color:#000;font:weight bolder;letter-spacing:0.1em;font-size:35px;font-family:Monotype Corsiva;font-style:italic;">Cartoonify</p></th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+            <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+			<th><a href="Home.html">HOME</a></th>
+		    <th><a href="/register">SIGN UP</a></th>
+			<th><a href="home.html#about">ABOUT</a></th>
+            <th><a href="/">LOGOUT</a></th>
+            </tr> 
+            </table>                             			
+		</div>
+        <div>
+            <form enctype="multipart/form-data" method="post" action="/uploadpic" >
+                <input type="submit" class="button" name="button" id="button" value="uploadpic"></input>   
+            </form>
+            <form enctype="multipart/form-data" method="post" action="/capturepic" >
+                <input type="submit" class="button" name="button" id="button" value="capturepic"></input>   
+            </form>
+        </div>
+    </body>
+</html>
